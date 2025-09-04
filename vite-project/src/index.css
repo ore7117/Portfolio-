@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* Theme and animation variables */
+@theme {
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-card: hsl(var(--card));
+
+  /* adding animations */
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+  --animate-meteor: meteor 5s linear infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  /* this is what makes the stars pulsate */
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* making the meteors fall down! */
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    /* RETURN TO THIS: can change colors accordingly with HSL */
+    --background: 210 40% 98%; /* hsl(210, 40%, 98%) */
+    --foreground: 222 47% 11%; /* hsl(222, 47%, 11%) */
+    --card: 0 0% 100%; /* hsl(0, 0%, 100%) */
+    --primary: 210 100% 50%; /* hsl(250, 47%, 60%) */
+    --primary-foreground: 22 47% 11%; /* rgb(1, 135, 255) */
+    --border: 214 32% 91%; /* hsl(214, 32%, 91%) */
+  }
+
+  .dark {
+    --background: 222 47% 4%; /* hsl(222, 47%, 4%) */
+    --foreground: 213 31% 91%; /* hsl(213, 31%, 91%) */
+    --card: 222 47% 8%; /* hsl(222, 47%, 8%) */
+    --primary: 210 100% 50%; /* rgb(1, 135, 255) */
+    --primary-foreground: 210% 100% 50%; /* hsl(213, 31%, 91%) */
+    --border: 217 33% 20%; /* hsl(217, 33%, 20%) */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  /*media queries to set size for screens*/
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@utility text-glow {
+  @apply relative;
+  text-shadow: 0 0 10px rgba(1, 12, 255, 0.5);
+}
+
+/* transiton for card hover */
+@utility card-hover {
+  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+}
+
+@utility gradient-border {
+  /* Make the element's position relative for layering effects */
+  @apply relative;
+
+  /* Apply medium-sized rounded corners */
+  @apply rounded-md;
+
+  /* Set a horizontal gradient background using the card color variable */
+  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+
+  /* Ensure the background only covers the padding area, not the border */
+  background-clip: padding-box;
+
+  /* Add a transparent border to enable gradient border effects */
+  border: 1px solid transparent;
+}
+
+@utility my-button {
+  /*padding, rounded, we defined colors previously, so now we can use them in buttons 
+  bg = background, primary text = text-primary
+  */
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
+         transition-all duration-300 hover:shadow-[0_0_10px_rgba(1,135,255,0.5)]
+         hover:scale-105 active:scale-95;
+}
+
+@utility star {
+  @apply absolute rounded-full bg-white;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+}
+
+@utility meteor {
+  /* LOOK: how to create gradient in tailwind */
+  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: ;
+}
