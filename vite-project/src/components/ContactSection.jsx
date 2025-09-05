@@ -7,6 +7,7 @@ import {
   Send,
   Twitch,
   Twitter,
+  Music,
 } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useState } from "react";
@@ -51,10 +52,10 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Email</h4>
                   <a
-                    href="mailto:hello@gmail.com"
+                    href="mailto:ore7117@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@gmail.com
+                    ore7117@gmail.com
                   </a>
                 </div>
               </div>
@@ -88,17 +89,17 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
+                <a href="https://www.linkedin.com/in/ore-ogundipe-5933992a2/" target="_blank">
                   <Linkedin />
                 </a>
                 <a href="#" target="_blank">
                   <Twitter />
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://www.instagram.com/oreogundipe_/" target="_blank">
                   <Instagram />
                 </a>
-                <a href="#" target="_blank">
-                  <Twitch />
+                <a href="https://open.spotify.com/user/zfb7aakk00zym6xqpjd9m2pf8" target="_blank">
+                  <Music />
                 </a>
               </div>
             </div>

@@ -1,4 +1,3 @@
-import {Code, User, Briefcase} from "lucide-react"
 
 export const AboutSection = () => {
     return <section id="about" className="px-4 relative py-24">
@@ -35,42 +34,17 @@ export const AboutSection = () => {
 
                 {/* Make this into a picture of me? */}
             </div>
-            <div className="grid grid-cols-1 gap-6"> 
-                <div className="gradient-border p-6 card-hover">
-                    <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-full bg-primary/10">
-                            <Code className="h-6 w-6 text-primary"/>
-                        </div>
-                        <div className="text-left">
-                            <h4 className="font-bold text-lg">Full-Stack Development</h4>
-                            <p className="text-muted-foreground">Blah Blah Blah im goated</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="gradient-border p-6 card-hover">
-                    <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-full bg-primary/10">
-                            <User className="h-6 w-6 text-primary"/>
-                        </div>
-                        <div className="text-left">
-                            <h4 className="font-bold text-lg">Full-Stack Development</h4>
-                            <p className="text-muted-foreground">Blah Blah Blah im goated</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div className="gradient-border p-6 card-hover">
-                    <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-full bg-primary/10">
-                            <Briefcase className="h-6 w-6 text-primary"/>
-                        </div>
-                        <div className="text-left">
-                            <h4 className="font-bold text-lg">Full-Stack Development</h4>
-                            <p className="text-muted-foreground">Blah Blah Blah im goated</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div className="flex justify-center">
+    <div className="relative">
+        <img 
+            src="/images/me.JPG" 
+            alt="Ore Ogundipe" 
+            className="w-64 h-90 md:w-80 md:h-120 object-cover rounded-2xl shadow-2xl"
+        />
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent"></div>
+    </div>
+</div>
+        
 
             </div>
         </div>
