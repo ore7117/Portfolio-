@@ -1,3 +1,10 @@
-Ore’s Portfolio
+# Ore's Portfolio
 
-A personal portfolio website built with React and Tailwind CSS to showcase my projects, experience, and skills. The site uses a star-themed aesthetic, responsive layouts, and smooth animations for an engaging user experience.
+A personal portfolio website built with React and Tailwind CSS to showcase projects, skills, and experience.
+## Features
+- Responsive design
+- Project showcase with dynamic cards
+- Reusable components
+
+## Live Demo
+[View Portfolio](https://your-vercel-link.vercel.app)
